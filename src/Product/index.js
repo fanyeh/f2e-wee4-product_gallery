@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import GridTop from './GridTop';
 import GridBottom from './GridBottom';
-import Image from './Image';
 import GridContent from './GridContent';
-import Title from './Title';
-import Subtitle from './Subtitle';
-import Caption from './Caption';
+import TitleSmall from './TitleSmall';
 import Label from './Label';
 import Icon from './Icon';
+import Subtitle from '../shared//Subtitle';
+import Title from '../shared//Title';
+import Image from '../shared/Image';
 class Product extends Component {
   render() {
     return (
@@ -41,7 +41,7 @@ class Product extends Component {
 
         <GridContent>
           <GridContent.Caption>
-            <Caption>Product details</Caption>
+            <TitleSmall>Product details</TitleSmall>
           </GridContent.Caption>
           <GridContent.Header>
             <Title>vintage denim</Title>

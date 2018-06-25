@@ -1,5 +1,6 @@
-import Grid from './Grid';
+import Grid from '../shared/Grid';
 import styled from 'styled-components';
+import pattern from '../shared/pattern.svg';
 const GridBottom = Grid.extend`
   height: 800px;
   grid-template-rows: repeat(8, 1fr);
@@ -22,8 +23,9 @@ const SlashBox = styled.div`
   grid-column: 3 / span 2;
   grid-row: 8 / span 1;
   transform: translate(-25%, -50%);
-  background: #50e3c2;
   z-index: 5;
+  background-image: url(${pattern});
+  background-repeat: repeat-x;
 `;
 const ImageContainerSm = styled.div`
   grid-column: 2 / span 3;

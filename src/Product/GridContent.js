@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import Grid from './Grid';
-
+import Grid from '../shared/Grid';
+import TitleSmall from './TitleSmall';
 const GridContent = Grid.extend`
   height: 400px;
   grid-template-rows: repeat(4, 1fr);
@@ -9,6 +9,9 @@ const GridContent = Grid.extend`
 const Caption = styled.div`
   grid-column: 2 / span 1;
   grid-row: 1 / span 4;
+  & > ${TitleSmall} {
+    transform: rotate(90deg) translateX(-1.5rem);
+  }
 `;
 const Header = styled.div`
   grid-column: 3 / span 5;
