@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import GridTop from './GridTop';
 import GridBottom from './GridBottom';
 import GridContent from './GridContent';
-import TitleSmall from './TitleSmall';
-import Label from './Label';
+import TitleSmall from '../shared/TitleSm';
+import Label from '../shared/Label';
 import Icon from './Icon';
 import Subtitle from '../shared//Subtitle';
-import Title from '../shared//Title';
+import Title from '../shared//TitleMd';
 import Image from '../shared/Image';
 class Product extends Component {
   render() {

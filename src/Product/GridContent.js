@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Grid from '../shared/Grid';
-import TitleSmall from './TitleSmall';
+import TitleSmall from '../shared/TitleSm';
 const GridContent = Grid.extend`
   height: 400px;
   grid-template-rows: repeat(4, 1fr);

@@ -5,8 +5,8 @@ export default styled.div`
   font-size: 3rem;
   line-height: 2.2rem;
   font-weight: 900;
-  background: white;
   position: relative;
+  white-space: nowrap;
   &:after {
     content: attr(title);
     color: rgba(0, 0, 0, 0.1);
@@ -19,7 +19,6 @@ export default styled.div`
     content: attr(title);
     color: rgba(0, 0, 0, 0.3);
     position: absolute;
-    background: white;
     top: -17px;
     left: 0px;
     z-index: -1;
