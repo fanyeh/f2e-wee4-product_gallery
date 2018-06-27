@@ -1,49 +1,50 @@
-import Grid from '../shared/Grid';
 import styled from 'styled-components';
-import pattern from '../shared/pattern.svg';
-const GridBottom = Grid.extend`
-  height: 800px;
-  grid-template-rows: repeat(8, 1fr);
+import { gridArea, patternBox, border } from '../shared/style-utils';
+import ImageContainer from '../shared/ImageContainer';
+const GridBottom = styled.div`
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  ${gridArea(1, 8, 13, 7)};
 `;
 
 const BorderBox = styled.div`
-  grid-column: 2 / span 4;
-  grid-row: 4 / span 2;
   transform: translate(-25%, -25%);
-  border: 20px solid #50e3c2;
   box-sizing: border-box;
+  ${border};
+  ${gridArea(2, 4, 4, 2)};
 `;
-const SolidBox = styled.div`
-  grid-column: 7 / span 2;
-  grid-row: 3 / span 2;
+const Box = styled.div`
   transform: translateX(-25%);
   background: #50e3c2;
+  ${gridArea(7, 2, 3, 2)};
 `;
-const SlashBox = styled.div`
-  grid-column: 3 / span 2;
-  grid-row: 8 / span 1;
-  transform: translate(-25%, -50%);
+const Pattern = styled.div`
+  transform: translate(-25%, 50%);
   z-index: 5;
-  background-image: url(${pattern});
-  background-repeat: repeat-x;
+  ${patternBox};
+  ${gridArea(3, 2, 7, 1)};
 `;
-const ImageContainerSm = styled.div`
-  grid-column: 2 / span 3;
-  grid-row: 2 / span 3;
-  overflow: hidden;
+const PhotoSm = styled(ImageContainer)`
   z-index: 5;
+  ${gridArea(2, 3, 2, 3)};
+  & > img {
+    width: auto;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+  }
 `;
-const ImageContainerLg = styled.div`
-  grid-column: 4 / span 4;
-  grid-row: 4 / span 4;
-  overflow: hidden;
+const PhotoLg = styled(ImageContainer)`
   z-index: 4;
+  ${gridArea(4, 4, 4, 4)};
 `;
 
 GridBottom.BorderBox = BorderBox;
-GridBottom.SolidBox = SolidBox;
-GridBottom.SlashBox = SlashBox;
-GridBottom.ImageContainerSm = ImageContainerSm;
-GridBottom.ImageContainerLg = ImageContainerLg;
+GridBottom.Box = Box;
+GridBottom.Pattern = Pattern;
+GridBottom.PhotoSm = PhotoSm;
+GridBottom.PhotoLg = PhotoLg;
 
 export default GridBottom;

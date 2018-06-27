@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Home />
+        <Product />
       </Wrapper>
     );
   }

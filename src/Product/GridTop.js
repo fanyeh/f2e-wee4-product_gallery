@@ -1,94 +1,65 @@
 import styled from 'styled-components';
-import Grid from '../shared/Grid';
-import Title from '../shared/TitleMd';
-const GridTop = Grid.extend`
-  height: 800px;
-  grid-template-rows: repeat(8, 1fr);
+import { gridArea, selfAlign, border, label, titleMd } from '../shared/style-utils';
+import ImageContainer from '../shared/ImageContainer';
+const GridTop = styled.div`
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  ${gridArea(1, 8, 1, 7)};
 `;
-
 const TitleTop = styled.div`
-  grid-column: 6 / span 2;
-  grid-row: 2 / span 1;
-  justify-self: end;
-  align-self: end;
-  & > ${Title} {
-    margin-bottom: 0.5rem;
-  }
+  ${titleMd};
+  ${selfAlign('end', 'end')};
+  ${gridArea(6, 2, 2, 1)};
 `;
 const TitleRight = styled.div`
-  grid-column: 8 / span 1;
-  grid-row: 3 / span 2;
-  justify-self: start;
-  align-self: start;
-  & > ${Title} {
-    transform-origin: 15% center;
-    transform: rotate(90deg);
-    padding-bottom: 0.5rem;
-  }
+  transform-origin: 15% center;
+  transform: rotate(90deg);
+  padding-bottom: 0.5rem;
+  ${titleMd};
+  ${selfAlign('start', 'start')};
+  ${gridArea(8, 1, 3, 2)};
 `;
 const TitleBottom = styled.div`
-  grid-column: 2 / span 1;
-  grid-row: 7 / span 1;
-  justify-self: start;
-  align-self: start;
-  & > ${Title} {
-    transform: rotate(180deg);
-    margin-top: 0.5rem;
-  }
+  transform: rotate(180deg);
+  margin-top: 0.5rem;
+  ${titleMd};
+  ${selfAlign('start', 'start')};
+  ${gridArea(2, 1, 7, 1)};
 `;
 
 const TitleLeft = styled.div`
-  grid-column: 1 / span 1;
-  grid-row: 6 / span 1;
-  justify-self: end;
-  align-self: end;
-  & > ${Title} {
-    transform-origin: 63% center;
-    transform: rotate(90deg);
-    padding-top: 0.5rem;
-  }
+  transform-origin: 63% center;
+  transform: rotate(90deg);
+  padding-top: 0.5rem;
+  ${titleMd};
+  ${selfAlign('end', 'end')};
+  ${gridArea(1, 1, 6, 1)};
 `;
 
-const SolidBox = styled.div`
-  grid-column: 2 / span 2;
-  grid-row: 3 / span 2;
+const Box = styled.div`
   transform: translate(-25%, -25%);
   background: #50e3c2;
+  ${gridArea(2, 2, 3, 2)};
 `;
 const BorderBox = styled.div`
-  grid-column: 6 / span 3;
-  grid-row: 6 / span 2;
-  transform: translate(calc(100% / -6), -25%);
-  border: 20px solid #50e3c2;
+  transform: translate(calc(100% / 6), 25%);
   box-sizing: border-box;
+  ${border};
+  ${gridArea(4, 4, 5, 2)};
 `;
 
-const ImageContainer = styled.div`
-  grid-column: 2 / span 6;
-  grid-row: 3 / span 4;
-  overflow: hidden;
+const Photo = styled(ImageContainer)`
   z-index: 5;
-`;
-const Icon = styled.div`
-  grid-column: 1 / span 1;
-  grid-row: 1 / span 1;
-  justify-self: end;
-  align-self: center;
-`;
-const Label = styled.div`
-  grid-column: 2 / span 2;
-  grid-row: 1 / span 1;
-  align-self: center;
+  ${gridArea(2, 6, 3, 4)};
 `;
 
-GridTop.SolidBox = SolidBox;
+GridTop.Box = Box;
 GridTop.BorderBox = BorderBox;
-GridTop.ImageContainer = ImageContainer;
+GridTop.Photo = Photo;
 GridTop.TitleTop = TitleTop;
 GridTop.TitleBottom = TitleBottom;
 GridTop.TitleLeft = TitleLeft;
 GridTop.TitleRight = TitleRight;
-GridTop.Icon = Icon;
-GridTop.Label = Label;
 
 export default GridTop;

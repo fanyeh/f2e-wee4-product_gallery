@@ -1,32 +1,26 @@
 import styled from 'styled-components';
-import TitleMd from '../shared/TitleMd';
-import TitleSm from '../shared/TitleSm';
-import ShadowTitle from '../shared/ShadowTitle';
+import ImageContainer from '../shared/ImageContainer';
+import { gridArea, num, selfAlign, shadowTitle, titleSm } from '../shared/style-utils';
+
 const GridTwo = styled.div`
-  grid-column: 6 / span 3;
-  grid-row: 3 / span 4;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
+  ${gridArea(6, 3, 3, 4)};
 `;
 
 const Title = styled.div`
-  grid-column: 2 / span 2;
-  grid-row: 4 / span 1;
-  & > ${ShadowTitle} {
-    transform: translateY(25px);
-  }
+  transform: translateY(70px);
+  ${shadowTitle};
+  ${gridArea(2, 2, 3, 1)};
+  ${selfAlign('start', 'end')};
 `;
-const ImageContainer = styled.div`
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 2;
-  overflow: hidden;
+const Photo = styled(ImageContainer)`
+  ${gridArea(1, 2, 2, 2)};
 `;
 
 const Box = styled.div`
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 2;
-  transform: translate(calc(100% / 6), -25%);
+  transform: translate(25%, -25%);
   background: #50e3c2;
   z-index: -5;
   position: relative;
@@ -37,37 +31,30 @@ const Box = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(21.5%, -25%);
+    transform: translate(25%, -25%);
     border: 20px solid #50e3c2;
     box-sizing: border-box;
   }
+  ${gridArea(1, 2, 2, 2)};
 `;
 
-const SmallTitle = styled.div`
-  grid-column: 2 / span 1;
-  grid-row: 1 / span 1;
-  justify-self: start;
-  align-self: end;
-  & > ${TitleSm} {
-    transform: translateX(-100%);
-  }
+const SubTitle = styled.div`
+  transform: translateX(-100%);
+  ${titleSm};
+  ${selfAlign('start', 'end')};
+  ${gridArea(2, 2, 1, 1)};
 `;
 
 const Num = styled.div`
-  grid-column: 3 / span 1;
-  grid-row: 1 / span 1;
-  justify-self: end;
-  align-self: start;
-  /* transform: translateY(100%); */
-  & > ${TitleMd} {
-    line-height: 3rem;
-  }
+  ${selfAlign('end', 'start')};
+  ${gridArea(3, 1, 1, 1)};
+  ${num};
 `;
 
-GridTwo.Title = Title;
 GridTwo.Num = Num;
-GridTwo.SmallTitle = SmallTitle;
-GridTwo.ImageContainer = ImageContainer;
+GridTwo.Title = Title;
+GridTwo.SubTitle = SubTitle;
+GridTwo.Photo = Photo;
 GridTwo.Box = Box;
 
 export default GridTwo;
