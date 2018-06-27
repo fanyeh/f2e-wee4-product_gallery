@@ -60,7 +60,7 @@ class Home extends Component {
         </GridFive>
 
         <GridSix>
-          <GridSix.Num>07</GridSix.Num>
+          <GridSix.Num>06</GridSix.Num>
           <GridSix.Title name="VINTAGE DENIM">VINTAGE DENIM</GridSix.Title>
           <GridSix.SubTitle>Mens's classic</GridSix.SubTitle>
           <GridSix.Photo src="https://bit.ly/2Ke1uGX" alt="" />
