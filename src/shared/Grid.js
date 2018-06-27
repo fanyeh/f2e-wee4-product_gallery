@@ -6,16 +6,14 @@ const HomeTitle = styled.div`
   ${gridArea(3, 4, 1, 1)};
   ${titleLg};
 `;
-
 const HomeLabel = styled.div`
   ${selfAlign('center', 'start')};
   ${gridArea(4, 2, 1, 1)};
   ${label};
 `;
-
 const ProductIcon = styled.i`
   color: black;
-  margin-right: 0.5rem;
+  padding-right: 0.5rem;
   font-size: 1.5rem;
   ${selfAlign('end', 'center')};
   ${gridArea(1, 1, 1, 1)};
@@ -25,7 +23,6 @@ const PorductLabel = styled.div`
   ${label};
   ${gridArea(2, 2, 1, 1)};
 `;
-
 const Grid = styled.div`
   margin-top: 2rem;
   display: grid;

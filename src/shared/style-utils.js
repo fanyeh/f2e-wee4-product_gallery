@@ -9,14 +9,13 @@ export const selfAlign = (justify, align) => `
   justify-self: ${justify};
   align-self: ${align};
   `;
-
 export const patternBox = css`
   background-image: url(${pattern});
   background-repeat: repeat-x;
 `;
-
 export const border = css`
   border: 20px solid #50e3c2;
+  box-sizing: border-box;
 `;
 export const label = css`
   background: black;
@@ -25,7 +24,6 @@ export const label = css`
   color: white;
   display: inline-block;
 `;
-
 export const titleLg = css`
   font-size: 72px;
   font-weight: 900;
@@ -50,15 +48,12 @@ export const titleMd = css`
   white-space: nowrap;
   font-weight: 900;
 `;
-
 export const num = css`
   ${titleMd};
 `;
-
 export const shadowTitle = css`
   ${titleMd};
   position: relative;
-
   &:before,
   &:after {
     position: absolute;
@@ -66,7 +61,6 @@ export const shadowTitle = css`
     overflow: hidden;
     content: attr(name);
   }
-
   &:before {
     color: rgba(0, 0, 0, 0.3);
     top: -17px;
@@ -74,7 +68,7 @@ export const shadowTitle = css`
   }
   &:after {
     color: rgba(0, 0, 0, 0.1);
-    top: -26px;
-    height: 22%;
+    top: -24px;
+    height: 25%;
   }
 `;

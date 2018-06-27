@@ -3,7 +3,6 @@ import GridTop from './GridTop';
 import GridBottom from './GridBottom';
 import GridContent from './GridContent';
 import Grid from '../shared/Grid';
-// import ProductGrid from './ProductGrid';
 class Product extends Component {
   render() {
     return (

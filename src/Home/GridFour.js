@@ -9,6 +9,7 @@ import {
   shadowTitle,
   titleSm,
 } from '../shared/style-utils';
+
 const GridFour = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -20,7 +21,6 @@ const Title = styled.div`
   transform: rotate(-90deg);
   transform-origin: bottom right;
   ${shadowTitle};
-
   ${gridArea(1, 2, 1, 1)};
   ${selfAlign('end', 'end')};
 `;

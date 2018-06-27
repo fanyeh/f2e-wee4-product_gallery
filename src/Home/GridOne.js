@@ -9,6 +9,7 @@ import {
   shadowTitle,
   titleSm,
 } from '../shared/style-utils';
+
 const GridOne = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);

@@ -1,16 +1,15 @@
 import styled from 'styled-components';
 import { gridArea, patternBox, border } from '../shared/style-utils';
 import ImageContainer from '../shared/ImageContainer';
+
 const GridBottom = styled.div`
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(7, 1fr);
   ${gridArea(1, 8, 13, 7)};
 `;
-
 const BorderBox = styled.div`
   transform: translate(-25%, -25%);
-  box-sizing: border-box;
   ${border};
   ${gridArea(2, 4, 4, 2)};
 `;

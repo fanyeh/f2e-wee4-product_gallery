@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import ImageContainer from '../shared/ImageContainer';
 import { border, num, gridArea, selfAlign, shadowTitle, titleSm } from '../shared/style-utils';
+
 const GridSix = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -22,14 +23,12 @@ const BorderBox = styled.div`
   ${border};
   ${gridArea(2, 4, 4, 2)};
 `;
-
 const Box = styled.div`
   transform: translateX(-50%);
   background: #50e3c2;
   z-index: -5;
   ${gridArea(2, 1, 4, 2)};
 `;
-
 const SubTitle = styled.div`
   z-index: 5;
   ${titleSm};

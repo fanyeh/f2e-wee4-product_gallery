@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ImageContainer from '../shared/ImageContainer';
-import { gridArea, num, selfAlign, shadowTitle, titleSm } from '../shared/style-utils';
+import { gridArea, num, selfAlign, shadowTitle, titleSm, border } from '../shared/style-utils';
 
 const GridTwo = styled.div`
   display: grid;
@@ -32,8 +32,7 @@ const Box = styled.div`
     top: 0;
     left: 0;
     transform: translate(25%, -25%);
-    border: 20px solid #50e3c2;
-    box-sizing: border-box;
+    ${border};
   }
   ${gridArea(1, 2, 2, 2)};
 `;
